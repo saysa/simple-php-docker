@@ -10,5 +10,5 @@ Then restart the server with `docker-compose up -d`
 
 ## Symfony CLI tool
 
-`docker exec simple-php-docker_php_1 symfony`
+`docker exec sfp_php-fpm symfony`
 
