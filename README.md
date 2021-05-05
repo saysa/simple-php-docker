@@ -8,7 +8,7 @@
 After each PHP Dockerfile update, run `docker-compose build` to rebuild the image.
 Then restart the server with `docker-compose up -d`
 
-## Composer
+## Symfony CLI tool
 
-`docker exec simple-php-docker_php_1 composer`
+`docker exec simple-php-docker_php_1 symfony`
 
