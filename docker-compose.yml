@@ -11,6 +11,8 @@ services:
         build:
             context: .
             dockerfile: PHP.Dockerfile
+        #environment:
+        #    APP_ENV: 'my env perso variable 2'
         volumes:
             - .:/app
     mysql:
