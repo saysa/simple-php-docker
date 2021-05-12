@@ -4,12 +4,13 @@ ARG WORKFOLDER
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y libicu-dev \
     wget \
     git \
     libzip-dev \
     zip \
-    && docker-php-ext-install pdo pdo_mysql zip \
+    && docker-php-ext-configure intl \
+    && docker-php-ext-install pdo pdo_mysql zip intl \
     && pecl install xdebug && docker-php-ext-enable xdebug
 
 # Composer
