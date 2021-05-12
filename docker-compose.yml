@@ -8,7 +8,7 @@ services:
         #environment:
         #    APP_ENV: 'my env perso variable 2'
         volumes:
-            - .:/app
+            - '.:${WORKFOLDER}'
         restart: always
     web:
         container_name: ${CONTAINER_NAME}_nginx
