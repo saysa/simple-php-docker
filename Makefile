@@ -34,3 +34,12 @@ cache-clear: var/cache
 
 router: config/routes
 	$(SYMFONY) console debug:router
+
+require: composer.json
+	$(COMPOSER) req $(PACKAGE) -a -o
+
+require-dev: composer.json
+	$(COMPOSER) req --dev $(PACKAGE) -a -o
+
+autoload: composer.json
+	$(COMPOSER) dump-autoload -a -o
