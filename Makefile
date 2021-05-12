@@ -16,6 +16,9 @@ start: docker-compose.yml
 	make install
 	make cache-clear
 
+quick-start: docker-compose.yml
+	$(DOCKER_COMPOSE) up -d --remove-orphans --force-recreate
+
 restart: docker-compose.yml
 	$(DOCKER_COMPOSE) up -d --build --remove-orphans --no-recreate
 	make install
