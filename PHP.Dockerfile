@@ -7,7 +7,9 @@ ENV COMPOSER_ALLOW_SUPERUSER 1
 RUN apt-get update && apt-get install -y \
     wget \
     git \
-    && docker-php-ext-install pdo pdo_mysql \
+    libzip-dev \
+    zip \
+    && docker-php-ext-install pdo pdo_mysql zip \
     && pecl install xdebug && docker-php-ext-enable xdebug
 
 # Composer
