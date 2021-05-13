@@ -46,3 +46,6 @@ require-dev: composer.json
 
 autoload: composer.json
 	$(COMPOSER) dump-autoload -a -o
+
+ssh:
+	$(DOCKER) exec -it sfp_php-fpm bash
