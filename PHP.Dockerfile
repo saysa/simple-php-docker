@@ -1,4 +1,4 @@
-FROM php:fpm as base
+FROM php:5.6-fpm as base
 
 ARG WORKFOLDER
 
@@ -9,9 +9,10 @@ RUN apt-get update && apt-get install -y libicu-dev \
     git \
     libzip-dev \
     zip \
+    vim \
+    nano \
     && docker-php-ext-configure intl \
-    && docker-php-ext-install pdo pdo_mysql zip intl \
-    && pecl install xdebug && docker-php-ext-enable xdebug
+    && docker-php-ext-install pdo pdo_mysql zip intl
 
 # Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer

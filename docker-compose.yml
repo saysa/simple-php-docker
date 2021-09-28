@@ -9,6 +9,8 @@ services:
         #    APP_ENV: 'my env perso variable 2'
         volumes:
             - '.:${WORKFOLDER}'
+            - './docker/php/conf/php.ini:/usr/local/etc/php/php.ini'
+            - './docker/php/conf/php.ini:/usr/local/etc/php/conf.d/php.ini'
         restart: always
     web:
         container_name: ${CONTAINER_NAME}_nginx
