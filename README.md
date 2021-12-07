@@ -2,6 +2,9 @@
 
 - `docker-compose down --volumes`
 - `docker-compose up -d`
+- `docker exec -it sfp_php-fpm bash`
+- `composer update`
+- `sudo chmod -R 777 var/`
 
 ## Rebuild PHP
 
